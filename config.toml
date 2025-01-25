@@ -1,5 +1,5 @@
-base_url = "https://easydocs.codeandmedia.com"
-title = "Docs"
+base_url = "https://andrzejkebab.github.io/"
+title = "Kebab Site"
 compile_sass = true
 build_search_index = true
 
