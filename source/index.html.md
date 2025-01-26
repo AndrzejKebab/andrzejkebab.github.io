@@ -35,6 +35,13 @@ This example API documentation page was created with [Slate](https://github.com/
 
 > To authorize, use this code:
 
+```cs
+public static bool OrNot<T1, T2, T3, T4, T5>(this bool boolean, Func<T1, T2, T3, T4, T5, bool> other, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5)
+		{
+			return other == null ? boolean : boolean || !other(value1, value2, value3, value4, value5);
+		}
+```
+
 ```ruby
 require 'kittn'
 
