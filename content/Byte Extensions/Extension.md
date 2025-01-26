@@ -7,7 +7,7 @@ weight = 50
 
 This utility library provides extension methods for byte operations, allowing you to perform various checks and conversions on byte values.
 
-## `PercentageOf`
+## PercentageOf
 
 Calculates the percentage of a byte value relative to another byte value.
 
@@ -29,8 +29,6 @@ float percentage = part.PercentageOf(whole);
 
 ## IsEven
 
-### `IsEven`
-
 Checks if a byte value is even.
 
 ```csharp
@@ -50,8 +48,6 @@ bool isEven = value.IsEven();
 
 ## IsOdd
 
-### `IsOdd`
-
 Checks if a byte value is odd.
 
 ```csharp
@@ -70,8 +66,6 @@ bool isOdd = value.IsOdd();
 - bool: `true` if the byte value is odd; otherwise, `false`.
 
 ## ToInt
-
-### `ToInt`
 
 Converts a byte array to an integer.
 
@@ -93,8 +87,6 @@ int intValue = bytes.ToInt();
 
 ## ToLong
 
-### `ToLong`
-
 Converts a byte array to a long integer.
 
 ```csharp
@@ -114,8 +106,6 @@ long longValue = bytes.ToLong();
 - long: The long integer value converted from the byte array.
 
 ## ToChar
-
-### `ToChar`
 
 Converts a byte array to a character.
 
@@ -137,8 +127,6 @@ char charValue = bytes.ToChar();
 
 ## ToFloat
 
-### `ToFloat`
-
 Converts a byte array to a single-precision floating-point number.
 
 ```csharp
@@ -158,8 +146,6 @@ float floatValue = bytes.ToFloat();
 - float: The float value converted from the byte array.
 
 ## ToDouble
-
-### `ToDouble`
 
 Converts a byte array to a double-precision floating-point number.
 
@@ -181,8 +167,6 @@ double doubleValue = bytes.ToDouble();
 
 ## ToBoolean
 
-### `ToBoolean`
-
 Converts a byte array to a boolean value.
 
 ```csharp
@@ -203,8 +187,6 @@ bool booleanValue = bytes.ToBoolean();
 
 ## ToString
 
-### `ToString`
-
 Converts a byte array to a hexadecimal string.
 
 ```csharp
@@ -224,8 +206,6 @@ string stringValue = bytes.ToString();
 - string: The hexadecimal string representation of the byte array.
 
 ## ToType
-
-### `ToType`
 
 Converts a byte array to a specified type.
 
