@@ -29,6 +29,7 @@ module Rouge
         palette :orange         => '#fa961e'
         palette :white          => '#ffffff'        
         palette :blue           => '#fa2878'
+        palette :string         => '#e5da72'
 
         style Generic::Heading,                 :fg => :grey
         style Literal::String::Regex,           :fg => :orange
@@ -61,7 +62,7 @@ module Rouge
               Literal::Number,                  :fg => :light_violet
         style Literal::String::Char,
               Literal::String::Escape,
-              Literal::String::Symbol,          :fg => :light_violet
+              Literal::String::Symbol,          :fg => :string
         style Literal::String::Doc,
               Literal::String::Double,
               Literal::String::Backtick,
