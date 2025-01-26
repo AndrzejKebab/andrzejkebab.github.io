@@ -8,7 +8,6 @@ highlight_code = true
 highlight_theme = "visual-studio-dark"
 
 [extra]
-extra_syntaxes_and_themes = ["highlight_themes", "highlight_themes/MyCodeStyle"]
 logo = "https://easydocs.codeandmedia.com/logo.svg"
 release = "https://api.github.com/repos/getzola/zola/releases/latest"
 favicon = "https://www.getzola.org/favicon.ico"
