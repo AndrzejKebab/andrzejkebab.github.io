@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://andrzejkebab.github.io/main.css">
+    <link rel="icon" href="https://www.getzola.org/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> TEST | Utility Library </title>
+</head>
+<body>
+
+<script>
+        fetch('https://api.github.com/repos/getzola/zola/releases/latest')
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let release_name = data.name;
+                let html_url = data.html_url;
+                release.innerHTML = `<a href='${html_url}'>${release_name}</a>`;
+            });
+    </script>
+<main>
+    
+    <nav>
+            <a href="https:&#x2F;&#x2F;andrzejkebab.github.io&#x2F;">
+                        <img src="https://easydocs.codeandmedia.com/logo.svg" alt="logo"/>
+                    </a>
+                <div id="release"></div>
+            <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
+            <div id="trees">
+                <input class="tree-toggle" type="checkbox" id="utility-library"
+                           checked/>
+                    <label class="tree-toggle-label"
+                           for="utility-library">Utility Library</label>
+
+                    <ul class="subtree">
+                        <li >
+                                <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/">Byte Extensions</a>
+                            </li>
+
+                            <li >
+                                <a href="https://andrzejkebab.github.io/Utility Library/float-extensions/">Float Extensions</a>
+                            </li>
+
+                            </ul>
+                </div>
+        </nav>
+    <article>
+
+        <div id="on_right">
+                <span id="search-ico" class="ms-Icon--Search"></span>
+            </div>
+            <div class="search-container">
+                <input id="search" type="search" placeholder="Search as you type...">
+                <div class="search-results">
+                    <div class="search-results__header"></div>
+                    <ul class="search-results__items"></ul>
+                </div>
+            </div>
+        <div id="wrap">
+            
+    <h2 class="title"> Utility Library </h2>
+
+        <h3>Pages:</h3>
+        <ul>
+            <li><a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/">Byte Extensions</a></li>
+                <li><a href="https://andrzejkebab.github.io/Utility Library/float-extensions/">Float Extensions</a></li>
+                
+        </ul>
+    
+        </div>
+
+    </article>
+</main>
+
+
+    <script type="text/javascript" src="https://andrzejkebab.github.io/elasticlunr.min.js" defer></script>
+    <script type="text/javascript" src="https://andrzejkebab.github.io/search_index.en.js" defer></script>
+<script type="text/javascript" src="https://andrzejkebab.github.io/js.js" defer></script>
+
+</body>
+</html>

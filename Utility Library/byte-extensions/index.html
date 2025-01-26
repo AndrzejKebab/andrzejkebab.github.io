@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://andrzejkebab.github.io/main.css">
+    <link rel="icon" href="https://www.getzola.org/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> TEST | Byte Extensions </title>
+</head>
+<body>
+
+<script>
+        fetch('https://api.github.com/repos/getzola/zola/releases/latest')
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let release_name = data.name;
+                let html_url = data.html_url;
+                release.innerHTML = `<a href='${html_url}'>${release_name}</a>`;
+            });
+    </script>
+<main>
+    
+    <nav>
+            <a href="https:&#x2F;&#x2F;andrzejkebab.github.io&#x2F;">
+                        <img src="https://easydocs.codeandmedia.com/logo.svg" alt="logo"/>
+                    </a>
+                <div id="release"></div>
+            <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
+            <div id="trees">
+                <input class="tree-toggle" type="checkbox" id="utility-library"
+                           checked/>
+                    <label class="tree-toggle-label"
+                           for="utility-library">Utility Library</label>
+
+                    <ul class="subtree">
+                        <li class="active">
+                                <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/">Byte Extensions</a>
+                            </li>
+
+                            
+                                    
+                                    
+                                        <ul id="toc">
+                                            <li><a href="
+                                                        https://andrzejkebab.github.io/Utility Library/byte-extensions/#utilitylibrary-core">UtilityLibrary.Core</a>
+                                                    <ul>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#percentageof">PercentageOf</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#iseven">IsEven</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#isodd">IsOdd</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#toint">ToInt</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#tolong">ToLong</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#tochar">ToChar</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#tofloat">ToFloat</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#todouble">ToDouble</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#toboolean">ToBoolean</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#tostring">ToString</a>
+                                                                </li>
+                                                            <li>
+                                                                    <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/#totype">ToType</a>
+                                                                </li>
+                                                            </ul>
+                                                    </li>
+                                            </ul>
+                                    <li >
+                                <a href="https://andrzejkebab.github.io/Utility Library/float-extensions/">Float Extensions</a>
+                            </li>
+
+                            </ul>
+                </div>
+        </nav>
+    <article>
+
+        <div id="on_right">
+                <span id="search-ico" class="ms-Icon--Search"></span>
+            </div>
+            <div class="search-container">
+                <input id="search" type="search" placeholder="Search as you type...">
+                <div class="search-results">
+                    <div class="search-results__header"></div>
+                    <ul class="search-results__items"></ul>
+                </div>
+            </div>
+        <div id="wrap">
+            
+        <h1 id="utilitylibrary-core">UtilityLibrary.Core&nbsp;<a class="anchor" href="#utilitylibrary-core">&#xE732;</a></h1>
+<p>This utility library provides extension methods for byte operations, allowing you to perform various checks and conversions on byte values.</p>
+<h2 id="percentageof">PercentageOf&nbsp;<a class="anchor" href="#percentageof">&#xE732;</a></h2>
+<p>Calculates the percentage of a byte value relative to another byte value.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>byte part = // initialize your byte value;
+</span><span>byte whole = // initialize your byte value;
+</span><span>
+</span><span>float percentage = part.PercentageOf(whole);
+</span></code></pre>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>part</code>: The byte value for which the percentage is calculated.</li>
+<li><code>whole</code>: The byte value representing the whole or total.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>percentage</code>: A <code>float</code> value representing the percentage of the <code>part</code> relative to the <code>whole</code>.</li>
+</ul>
+<h2 id="iseven">IsEven&nbsp;<a class="anchor" href="#iseven">&#xE732;</a></h2>
+<p>Checks if a byte value is even.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte value = 4;
+</span><span>bool isEven = value.IsEven();
+</span></code></pre>
+<h4 id="parameters">Parameters&nbsp;<a class="anchor" href="#parameters">&#xE732;</a></h4>
+<ul>
+<li><code>value</code> (byte): The byte value to check.</li>
+</ul>
+<h4 id="returns">Returns&nbsp;<a class="anchor" href="#returns">&#xE732;</a></h4>
+<ul>
+<li>bool: <code>true</code> if the byte value is even; otherwise, <code>false</code>.</li>
+</ul>
+<h2 id="isodd">IsOdd&nbsp;<a class="anchor" href="#isodd">&#xE732;</a></h2>
+<p>Checks if a byte value is odd.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte value = 5;
+</span><span>bool isOdd = value.IsOdd();
+</span></code></pre>
+<h4 id="parameters-1">Parameters&nbsp;<a class="anchor" href="#parameters-1">&#xE732;</a></h4>
+<ul>
+<li><code>value</code> (byte): The byte value to check.</li>
+</ul>
+<h4 id="returns-1">Returns&nbsp;<a class="anchor" href="#returns-1">&#xE732;</a></h4>
+<ul>
+<li>bool: <code>true</code> if the byte value is odd; otherwise, <code>false</code>.</li>
+</ul>
+<h2 id="toint">ToInt&nbsp;<a class="anchor" href="#toint">&#xE732;</a></h2>
+<p>Converts a byte array to an integer.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte[] bytes = { 0, 0, 0, 42 };
+</span><span>int intValue = bytes.ToInt();
+</span></code></pre>
+<h4 id="parameters-2">Parameters&nbsp;<a class="anchor" href="#parameters-2">&#xE732;</a></h4>
+<ul>
+<li><code>bytes</code> (byte[]): The byte array to convert.</li>
+<li><code>startIndex</code> (int, optional): The starting index in the byte array. Defaults to 0.</li>
+</ul>
+<h4 id="returns-2">Returns&nbsp;<a class="anchor" href="#returns-2">&#xE732;</a></h4>
+<ul>
+<li>int: The integer value converted from the byte array.</li>
+</ul>
+<h2 id="tolong">ToLong&nbsp;<a class="anchor" href="#tolong">&#xE732;</a></h2>
+<p>Converts a byte array to a long integer.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte[] bytes = { 0, 0, 0, 0, 0, 0, 0, 42 };
+</span><span>long longValue = bytes.ToLong();
+</span></code></pre>
+<h4 id="parameters-3">Parameters&nbsp;<a class="anchor" href="#parameters-3">&#xE732;</a></h4>
+<ul>
+<li><code>bytes</code> (byte[]): The byte array to convert.</li>
+<li><code>startIndex</code> (int, optional): The starting index in the byte array. Defaults to 0.</li>
+</ul>
+<h4 id="returns-3">Returns&nbsp;<a class="anchor" href="#returns-3">&#xE732;</a></h4>
+<ul>
+<li>long: The long integer value converted from the byte array.</li>
+</ul>
+<h2 id="tochar">ToChar&nbsp;<a class="anchor" href="#tochar">&#xE732;</a></h2>
+<p>Converts a byte array to a character.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte[] bytes = { 65 };
+</span><span>char charValue = bytes.ToChar();
+</span></code></pre>
+<h4 id="parameters-4">Parameters&nbsp;<a class="anchor" href="#parameters-4">&#xE732;</a></h4>
+<ul>
+<li><code>bytes</code> (byte[]): The byte array to convert.</li>
+<li><code>startIndex</code> (int, optional): The starting index in the byte array. Defaults to 0.</li>
+</ul>
+<h4 id="returns-4">Returns&nbsp;<a class="anchor" href="#returns-4">&#xE732;</a></h4>
+<ul>
+<li>char: The character value converted from the byte array.</li>
+</ul>
+<h2 id="tofloat">ToFloat&nbsp;<a class="anchor" href="#tofloat">&#xE732;</a></h2>
+<p>Converts a byte array to a single-precision floating-point number.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte[] bytes = { 0, 0, 0, 42 };
+</span><span>float floatValue = bytes.ToFloat();
+</span></code></pre>
+<h4 id="parameters-5">Parameters&nbsp;<a class="anchor" href="#parameters-5">&#xE732;</a></h4>
+<ul>
+<li><code>bytes</code> (byte[]): The byte array to convert.</li>
+<li><code>startIndex</code> (int, optional): The starting index in the byte array. Defaults to 0.</li>
+</ul>
+<h4 id="returns-5">Returns&nbsp;<a class="anchor" href="#returns-5">&#xE732;</a></h4>
+<ul>
+<li>float: The float value converted from the byte array.</li>
+</ul>
+<h2 id="todouble">ToDouble&nbsp;<a class="anchor" href="#todouble">&#xE732;</a></h2>
+<p>Converts a byte array to a double-precision floating-point number.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte[] bytes = { 0, 0, 0, 0, 0, 0, 0, 42 };
+</span><span>double doubleValue = bytes.ToDouble();
+</span></code></pre>
+<h4 id="parameters-6">Parameters&nbsp;<a class="anchor" href="#parameters-6">&#xE732;</a></h4>
+<ul>
+<li><code>bytes</code> (byte[]): The byte array to convert.</li>
+<li><code>startIndex</code> (int, optional): The starting index in the byte array. Defaults to 0.</li>
+</ul>
+<h4 id="returns-6">Returns&nbsp;<a class="anchor" href="#returns-6">&#xE732;</a></h4>
+<ul>
+<li>double: The double value converted from the byte array.</li>
+</ul>
+<h2 id="toboolean">ToBoolean&nbsp;<a class="anchor" href="#toboolean">&#xE732;</a></h2>
+<p>Converts a byte array to a boolean value.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte[] bytes = { 1 };
+</span><span>bool booleanValue = bytes.ToBoolean();
+</span></code></pre>
+<h4 id="parameters-7">Parameters&nbsp;<a class="anchor" href="#parameters-7">&#xE732;</a></h4>
+<ul>
+<li><code>bytes</code> (byte[]): The byte array to convert.</li>
+<li><code>startIndex</code> (int, optional): The starting index in the byte array. Defaults to 0.</li>
+</ul>
+<h4 id="returns-7">Returns&nbsp;<a class="anchor" href="#returns-7">&#xE732;</a></h4>
+<ul>
+<li>bool: The boolean value converted from the byte array.</li>
+</ul>
+<h2 id="tostring">ToString&nbsp;<a class="anchor" href="#tostring">&#xE732;</a></h2>
+<p>Converts a byte array to a hexadecimal string.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte[] bytes = { 10, 20, 30 };
+</span><span>string stringValue = bytes.ToString();
+</span></code></pre>
+<h4 id="parameters-8">Parameters&nbsp;<a class="anchor" href="#parameters-8">&#xE732;</a></h4>
+<ul>
+<li><code>bytes</code> (byte[]): The byte array to convert.</li>
+<li><code>startIndex</code> (int, optional): The starting index in the byte array. Defaults to 0.</li>
+</ul>
+<h4 id="returns-8">Returns&nbsp;<a class="anchor" href="#returns-8">&#xE732;</a></h4>
+<ul>
+<li>string: The hexadecimal string representation of the byte array.</li>
+</ul>
+<h2 id="totype">ToType&nbsp;<a class="anchor" href="#totype">&#xE732;</a></h2>
+<p>Converts a byte array to a specified type.</p>
+<pre data-lang="csharp" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>using UtilityLibrary.Core;
+</span><span>
+</span><span>byte[] bytes = { /* ... */ };
+</span><span>SomeType result = bytes.ToType&lt;SomeType&gt;();
+</span></code></pre>
+<h4 id="parameters-9">Parameters&nbsp;<a class="anchor" href="#parameters-9">&#xE732;</a></h4>
+<ul>
+<li><code>bytes</code> (byte[]): The byte array to convert.</li>
+</ul>
+<h4 id="returns-9">Returns&nbsp;<a class="anchor" href="#returns-9">&#xE732;</a></h4>
+<ul>
+<li>T: The object of the specified type converted from the byte array.</li>
+</ul>
+
+    
+        </div>
+
+    </article>
+</main>
+
+
+    <script type="text/javascript" src="https://andrzejkebab.github.io/elasticlunr.min.js" defer></script>
+    <script type="text/javascript" src="https://andrzejkebab.github.io/search_index.en.js" defer></script>
+<script type="text/javascript" src="https://andrzejkebab.github.io/js.js" defer></script>
+
+</body>
+</html>

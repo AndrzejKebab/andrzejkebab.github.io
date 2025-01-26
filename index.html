@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://andrzejkebab.github.io/main.css">
+    <link rel="icon" href="https://www.getzola.org/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>TEST</title>
+</head>
+<body>
+
+<script>
+        fetch('https://api.github.com/repos/getzola/zola/releases/latest')
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let release_name = data.name;
+                let html_url = data.html_url;
+                release.innerHTML = `<a href='${html_url}'>${release_name}</a>`;
+            });
+    </script>
+<main>
+    
+    <nav>
+            <img src="https://easydocs.codeandmedia.com/logo.svg" alt="logo"/>
+                <div id="release"></div>
+            <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
+            <div id="trees">
+                <input class="tree-toggle" type="checkbox" id="utility-library"
+                           />
+                    <label class="tree-toggle-label"
+                           for="utility-library">Utility Library</label>
+
+                    <ul class="subtree">
+                        <li >
+                                <a href="https://andrzejkebab.github.io/Utility Library/byte-extensions/">Byte Extensions</a>
+                            </li>
+
+                            <li >
+                                <a href="https://andrzejkebab.github.io/Utility Library/float-extensions/">Float Extensions</a>
+                            </li>
+
+                            </ul>
+                </div>
+        </nav>
+    <article>
+
+        <div id="on_right">
+                <span id="search-ico" class="ms-Icon--Search"></span>
+            </div>
+            <div class="search-container">
+                <input id="search" type="search" placeholder="Search as you type...">
+                <div class="search-results">
+                    <div class="search-results__header"></div>
+                    <ul class="search-results__items"></ul>
+                </div>
+            </div>
+        <div id="wrap">
+            <h2 id="test">TEST&nbsp;<a class="anchor" href="#test">&#xE732;</a></h2>
+<pre data-lang="cs" style="background-color:#1e1e1e;color:#dcdcdc;" class="language-cs "><code class="language-cs" data-lang="cs"><span style="color:#569cd6;">private async </span><span>Task CheckViewDistanceAsync(CancellationToken token)
+</span><span>{
+</span><span>    int3 coord = GetChunkCoordFromVector3(PlayerTransform.position);
+</span><span>    List&lt;int3&gt; previouslyActiveChunks = </span><span style="color:#569cd6;">new</span><span>();
+</span><span>    previouslyActiveChunks.AddRange(activeChunks);
+</span><span>    activeChunks.Clear();
+</span><span>
+</span><span>    playerLastChunkCoord = PlayerChunkCoord;
+</span><span>
+</span><span>    List&lt;int3&gt; chunksToCheck = </span><span style="color:#569cd6;">new</span><span>();
+</span><span>
+</span><span>    </span><span style="color:#608b4e;">// Gather all potential chunks within view distance.
+</span><span>    </span><span style="color:#569cd6;">for </span><span>(</span><span style="color:#569cd6;">var </span><span>y = coord.y </span><span style="color:#569cd6;">- </span><span>VoxelData.ViewDistanceInChunks; y </span><span style="color:#569cd6;">&lt; </span><span>coord.y </span><span style="color:#569cd6;">+ </span><span>VoxelData.ViewDistanceInChunks; y</span><span style="color:#569cd6;">++</span><span>)
+</span><span>    </span><span style="color:#569cd6;">for </span><span>(</span><span style="color:#569cd6;">var </span><span>x = coord.x </span><span style="color:#569cd6;">- </span><span>VoxelData.ViewDistanceInChunks; x </span><span style="color:#569cd6;">&lt; </span><span>coord.x </span><span style="color:#569cd6;">+ </span><span>VoxelData.ViewDistanceInChunks; x</span><span style="color:#569cd6;">++</span><span>)
+</span><span>    </span><span style="color:#569cd6;">for </span><span>(</span><span style="color:#569cd6;">var </span><span>z = coord.z </span><span style="color:#569cd6;">- </span><span>VoxelData.ViewDistanceInChunks; z </span><span style="color:#569cd6;">&lt; </span><span>coord.z </span><span style="color:#569cd6;">+ </span><span>VoxelData.ViewDistanceInChunks; z</span><span style="color:#569cd6;">++</span><span>)
+</span><span>    {
+</span><span>        int3 chunkCoord = </span><span style="color:#569cd6;">new</span><span>(x, y, z);
+</span><span>        </span><span style="color:#569cd6;">if </span><span>(IsChunkInWorld(chunkCoord)) chunksToCheck.Add(chunkCoord);
+</span><span>    }
+</span><span>
+</span><span>    </span><span style="color:#608b4e;">// Sort chunks by distance from the player&#39;s current chunk position.
+</span><span>    chunksToCheck.Sort((a, b) </span><span style="color:#569cd6;">=&gt;
+</span><span>        math.distance(coord, a).CompareTo(math.distance(coord, b))
+</span><span>    );
+</span><span>
+</span><span>    </span><span style="color:#608b4e;">// Process chunks in batches to avoid frame freeze.
+</span><span>    </span><span style="color:#569cd6;">const int </span><span>batchSize = </span><span style="color:#b5cea8;">10</span><span>;
+</span><span>    </span><span style="color:#569cd6;">for </span><span>(</span><span style="color:#569cd6;">var </span><span>i = </span><span style="color:#b5cea8;">0</span><span>; i </span><span style="color:#569cd6;">&lt; </span><span>chunksToCheck.Count; i</span><span style="color:#569cd6;">++</span><span>)
+</span><span>    {
+</span><span>        </span><span style="color:#608b4e;">// Exit if the task is canceled
+</span><span>        </span><span style="color:#569cd6;">if </span><span>(token.IsCancellationRequested)
+</span><span>        {
+</span><span>            Debug.Log(</span><span style="color:#d69d85;">&quot;Chunk processing canceled.&quot;</span><span>);
+</span><span>            </span><span style="color:#569cd6;">return</span><span>;
+</span><span>        }
+</span><span>
+</span><span>        int3 chunkCoord = chunksToCheck[i];
+</span><span>
+</span><span>        </span><span style="color:#569cd6;">if </span><span>(</span><span style="color:#569cd6;">!</span><span>ChunkStorage.ContainsKey(chunkCoord))
+</span><span>            CreateNewChunk(chunkCoord.x, chunkCoord.y, chunkCoord.z);
+</span><span>        </span><span style="color:#569cd6;">else if </span><span>(</span><span style="color:#569cd6;">!</span><span>ChunkStorage[chunkCoord].IsActive)
+</span><span>            ChunkStorage[chunkCoord].IsActive = </span><span style="color:#569cd6;">true</span><span>;
+</span><span>
+</span><span>        activeChunks.Add(chunkCoord);
+</span><span>        previouslyActiveChunks.Remove(chunkCoord);
+</span><span>
+</span><span>        </span><span style="color:#569cd6;">if </span><span>(i </span><span style="color:#569cd6;">% </span><span>batchSize </span><span style="color:#569cd6;">== </span><span style="color:#b5cea8;">0</span><span>)
+</span><span>        {
+</span><span>            </span><span style="color:#569cd6;">await </span><span>Task.Yield(); </span><span style="color:#608b4e;">// Yield control to avoid frame freeze
+</span><span>        }
+</span><span>    }
+</span><span>
+</span><span>    </span><span style="color:#608b4e;">// Disable chunks that are no longer within view distance
+</span><span>    </span><span style="color:#569cd6;">foreach </span><span>(int3 chunk </span><span style="color:#569cd6;">in </span><span>previouslyActiveChunks) ChunkStorage[chunk].IsActive = </span><span style="color:#569cd6;">false</span><span>;
+</span><span>
+</span><span>    previouslyActiveChunks.Clear();
+</span><span>
+</span><span>    Debug.Log(</span><span style="color:#d69d85;">&quot;Chunk processing complete.&quot;</span><span>);
+</span><span>}
+</span></code></pre>
+
+        </div>
+
+    </article>
+</main>
+
+
+    <script type="text/javascript" src="https://andrzejkebab.github.io/elasticlunr.min.js" defer></script>
+    <script type="text/javascript" src="https://andrzejkebab.github.io/search_index.en.js" defer></script>
+<script type="text/javascript" src="https://andrzejkebab.github.io/js.js" defer></script>
+
+</body>
+</html>
