@@ -3,7 +3,7 @@
 
 module Rouge
       module Themes
-        class Monokai < CSSTheme
+        class MonokaiSublimeSlate < CSSTheme
           name 'monokai_sublime_slate'
     
           palette :black          => '#000000'
