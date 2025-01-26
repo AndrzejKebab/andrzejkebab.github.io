@@ -11,7 +11,7 @@ module Rouge
 
         palette :black          => '#000000'
         palette :bright_green   => '#a6e22e'
-        palette :bright_pink    => '#f92672'
+        palette :bright_pink    => '#af82ff'
         palette :carmine        => '#960050'
         palette :dark           => '#49483e'
         palette :dark_graphite  => '#272822'
