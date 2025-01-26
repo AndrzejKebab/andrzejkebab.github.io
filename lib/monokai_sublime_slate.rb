@@ -4,7 +4,7 @@
 module Rouge
       module Themes
         class Monokai < CSSTheme
-          name 'monokai'
+          name 'monokai_sublime_slate'
     
           palette :black          => '#000000'
           palette :bright_green   => '#a6e22e'
