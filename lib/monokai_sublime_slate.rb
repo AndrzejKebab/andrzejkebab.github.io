@@ -27,7 +27,8 @@ module Rouge
         palette :very_dark      => '#1e0010'
         palette :whitish        => '#f8f8f2'
         palette :orange         => '#fa961e'
-        palette :white          => '#ffffff'
+        palette :white          => '#ffffff'        
+        palette :blue           => '#fa2878'
 
         style Generic::Heading,                 :fg => :grey
         style Literal::String::Regex,           :fg => :orange
@@ -57,8 +58,8 @@ module Rouge
               Literal::Number::Integer::Long,
               Literal::Number::Integer,
               Literal::Number::Oct,
-              Literal::Number,
-              Literal::String::Char,
+              Literal::Number,                  :fg => :light_violet
+        style Literal::String::Char,
               Literal::String::Escape,
               Literal::String::Symbol,          :fg => :light_violet
         style Literal::String::Doc,
